@@ -17,10 +17,9 @@ public class AsyncTestService {
 
 
     @Async(value = "namedTaskExecutor")
-    public Future<String> testFunc(){
+    public Future<String> testFunc(String phone){
         try {
             TimeUnit.SECONDS.sleep(5);
-            logger.info("test async log");
         }catch (Exception e){
             e.printStackTrace();
         }

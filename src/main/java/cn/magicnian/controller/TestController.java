@@ -25,8 +25,8 @@ public class TestController {
 
 
     @RequestMapping("/asyncTest")
-    public String asyncTest() {
-        asyncTestService.testFunc();
+    public String asyncTest(@RequestParam("phone")String phone) {
+        asyncTestService.testFunc(phone);
         return "success";
     }
 }
