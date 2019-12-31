@@ -13,25 +13,38 @@ public class Container1 {
 
     private List<String> list = new ArrayList<>();
 
-    public void add(String s){
+    public void add(String s) {
         list.add(s);
     }
 
-    public int size(){
+    public int size() {
         return list.size();
     }
 
     public static void main(String[] args) {
 
+        Object lock = new Object();
         Container1 container = new Container1();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int i=0;i<10;i++){
-                    container.add("value");
-                    System.out.println("添加完成");
+                synchronized (lock) {
+                    for (int i = 0; i < 10; i++) {
+                        container.add("value");
+                        System.out.println("添加完成" + i);
+
+                        if(container.size() == 5){
+                            lock.notify();
+                            try {
+                                lock.wait();//阻塞
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
                 }
+
 
             }
         });
@@ -39,16 +52,30 @@ public class Container1 {
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true){
-                    if(container.size()==5){
-                        System.out.println("====元素个数已经达到5");
-                        throw new RuntimeException("exit");
+                synchronized (lock){
+                    if (container.size() != 5) {
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
                     }
+                    System.out.println("exit");
+                    lock.notify();
                 }
+
             }
         });
 
-        t1.start();
         t2.start();
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        t1.start();
     }
 }
