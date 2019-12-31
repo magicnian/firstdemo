@@ -36,6 +36,7 @@ public class CacheData {
                     value = cache.get(key);
                     //再做一次判断，可能有其他的写线程更新过了缓存
                     if (value == null) {
+                        //从其他地方获取值
                         value = Thread.currentThread().getName() + "---value";
                         cache.put(key, value);
                         System.out.println(Thread.currentThread().getName()+"--------------put  "+value);
