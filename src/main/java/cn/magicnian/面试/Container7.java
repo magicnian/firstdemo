@@ -9,22 +9,22 @@ import java.util.List;
  * 线程2实现监控元素的个数
  * 当个数到5个时，线程2给出提示，并结束线程2
  */
-public class Container1 {
+public class Container7 {
 
     private List<String> list = new ArrayList<>();
 
-    public void add(String s) {
+    public void add(String s){
         list.add(s);
     }
 
-    public int size() {
+    public int size(){
         return list.size();
     }
 
     public static void main(String[] args) {
 
         Object lock = new Object();
-        Container1 container = new Container1();
+        Container7 container = new Container7();
 
         Thread t1 = new Thread(new Runnable() {
             @Override
