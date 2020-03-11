@@ -15,10 +15,6 @@ public class TondunDemo {
 
     private static final Logger logger = LoggerFactory.getLogger(TondunDemo.class);
 
-    private static final String partner_code = "WeShare_vn";
-    private static final String partner_key = "6390c799f86b4541a10d3d496d9c08b7";
-    private static final String app_name = "Vtien_and";
-
     public static void main(String[] args) {
 
         String url = "https://apitest.tongdun.net/aurora/apply/v1?partner_code=WeShare_vn&partner_key=6390c799f86b4541a10d3d496d9c08b7&app_name=Vtien_and";

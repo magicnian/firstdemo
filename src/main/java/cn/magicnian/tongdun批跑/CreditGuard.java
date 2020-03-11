@@ -32,9 +32,9 @@ public class CreditGuard {
 
     private static final String b_fileName = "C:\\Users\\nian\\Desktop\\tongdun\\审核前.csv";
 
-    private static final String partner_code = "WeShare_vn";
-    private static final String partner_key = "23b97770aaaf484eabe58ee63d65d15b";
-    private static final String app_name = "Vtien_and";
+    private static final String partner_code = "123";
+    private static final String partner_key = "123";
+    private static final String app_name = "123";
 
     public static void main(String[] args) throws Exception {
 
