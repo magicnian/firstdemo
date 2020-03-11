@@ -30,7 +30,7 @@ public class TaxBatch {
 
     private static final String url = "https://vn-api.advance.ai/vn/openapi/verification/v2/tax-detection";
 
-    private static final String access_key = "ee382db3dff6bb26";
+    private static final String access_key = "123";
 
     public static void main(String[] args) throws Exception {
 

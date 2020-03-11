@@ -13,8 +13,8 @@ public class Main {
     static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     static String url = "https://cloudapi.accuauth.com/image/quality";
-    static String apiId = "d7f5600e160242bb8152b85fd4561b26";
-    static String apiSecret = "1b1e435dd1d941c9a31875d53404a3cd";
+    static String apiId = "123";
+    static String apiSecret = "123";
 
     //    private static final String path = "D:\\inda_batch\\bad.txt";
     private static final String path = "D:\\inda_batch\\good.csv";

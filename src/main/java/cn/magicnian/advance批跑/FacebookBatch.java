@@ -32,7 +32,7 @@ public class FacebookBatch {
 
     private static final String url = "https://vn-api.advance.ai/vn/openapi/verification/v1/facebook-account-detection";
 
-    private static final String access_key = "ee382db3dff6bb26";
+    private static final String access_key = "123";
 
     public static void main(String[] args) throws Exception {
         WritableWorkbook writableWorkbook = Workbook.createWorkbook(new File("C:\\Users\\nian\\Desktop\\advanceai\\facebook_result.xls"));

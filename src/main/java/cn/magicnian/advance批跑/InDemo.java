@@ -20,7 +20,7 @@ public class InDemo {
 
     private static final String url = "https://vn-api.advance.ai/vn/openapi/score/v1/device-risk-index";
 
-    private static final String access_key = "ee382db3dff6bb26";
+    private static final String access_key = "123";
 
     public static void main(String[] args) {
 
