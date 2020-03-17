@@ -45,10 +45,21 @@ public class TestController {
         redisUtil.hset(key, "one", p);
 
         Object o = redisUtil.hget(key, "one");
-        System.out.println("=========p hashcode:"+p.hashCode());
+        System.out.println("=========p hashcode:" + p.hashCode());
 
-        System.out.println("=========o hashcode:"+o.hashCode());
+        System.out.println("=========o hashcode:" + o.hashCode());
 
         return "success";
+    }
+
+    @RequestMapping(value = "/validationtest1", method = RequestMethod.POST)
+    public String vt1(@RequestBody User user) {
+        try {
+            user.nullFieldValidate();
+        } catch (Exception e) {
+
+        }
+
+        return "sss";
     }
 }
