@@ -1,5 +1,9 @@
 package cn.magicnian.demo;
 
+import cn.magicnian.demo1022.event.BusinessEvent;
+import cn.magicnian.demo1022.event.DemoEvent;
+import cn.magicnian.demo1022.group.AbstractDataGroupFunc;
+import cn.magicnian.demo1022.push.AbstractDataPushFunc;
 import cn.magicnian.util.HttpClientFactory;
 import cn.magicnian.util.HttpClientPoolingCrawler;
 import cn.magicnian.util.HttpCustomResponse;
@@ -46,6 +50,8 @@ public class HttpClientTest {
 //        FileUtils.write(new File("C:\\Users\\10015133\\Desktop\\ops逆向相关\\sync.txt"),result,"UTF-8");
         HttpClientPoolingCrawler.custom().url("http://localhost:8888/demo/data").json(result).post();
 
+        String params = AbstractDataGroupFunc.getDataGroupFunc(DemoEvent.class).doDataGroup(BusinessEvent.class.newInstance());
+        AbstractDataPushFunc.getDataPushFunc(DemoEvent.class).doDataPush(params);
 
     }
 }
