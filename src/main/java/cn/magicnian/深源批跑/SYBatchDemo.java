@@ -26,8 +26,8 @@ public class SYBatchDemo {
 
     public static void main(String[] args) {
         String url = "https://cloudapi.accuauth.com/image/quality";
-        String apiId = "d7f5600e160242bb8152b85fd4561b26";
-        String apiSecret = "1b1e435dd1d941c9a31875d53404a3cd";
+        String apiId = "123";
+        String apiSecret = "123";
 
         Map<String, String> headers = new HashMap<>();
         headers.put("X-DF-API-ID", apiId);
