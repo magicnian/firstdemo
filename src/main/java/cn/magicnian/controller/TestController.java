@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/test")
@@ -51,4 +52,17 @@ public class TestController {
 
         return "success";
     }
+
+    @PostMapping("/upload")
+    public String upload(@RequestParam("file")MultipartFile file){
+        if (file.isEmpty()) {
+            return "上传失败，请选择文件";
+        }
+
+        System.out.println(file.getSize());
+
+        return "success";
+    }
+
+
 }
